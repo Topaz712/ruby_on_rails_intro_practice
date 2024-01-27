@@ -77,7 +77,7 @@ Checked with `post.reload` after and got:
 `ActiveRecord::RecordNotFound`
 
 --- Exercise three ---
- `In File post.rb`
+ `In File post.rb`(HISTORY COMMITS)
   
 - From the previous practice problem, add the following validations to the post model:
 
@@ -85,3 +85,15 @@ Include validations to the post model with the following rules:
 
 Title, published_at must be present
 Title must be unique
+```
+class Post < ApplicationRecord
+ validates :title, presence: true, uniqueness: true
+  validates :published_at, presence: true
+end
+```
+
+--- Exercise Four ---
+- `In post.rb file`
+- Include a callback to the post model with the following rules:
+
+- Each word in title must be capitalized before the record is created
