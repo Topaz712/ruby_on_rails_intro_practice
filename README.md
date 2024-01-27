@@ -75,3 +75,13 @@ TRANSACTION (0.1ms)  begin transaction
 ```
 Checked with `post.reload` after and got:
 `ActiveRecord::RecordNotFound`
+
+--- Exercise three ---
+ `In File post.rb`
+  
+- From the previous practice problem, add the following validations to the post model:
+
+Include validations to the post model with the following rules:
+
+Title, published_at must be present
+Title must be unique
