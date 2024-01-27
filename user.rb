@@ -1,4 +1,9 @@
 class User < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true, uniqueness: true
+  validate :name_cannot_contain_numbers
+
+  def name_cannot_contain_numbers
+    if name.match(/\d/)
+      errors.add(:name, "cannot contain numbers")
+    end
+  end
 end
