@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   before_create :downcase_email
 
+  has_one :profile
+  
   private
 
   def downcase_email
